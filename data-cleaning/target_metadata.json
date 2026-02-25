@@ -1,0 +1,36 @@
+{
+  "input_rows": 20442,
+  "output_rows": 20441,
+  "rows_dropped": 1,
+  "total_columns": 43,
+  "feature_columns": 40,
+  "target_columns": 3,
+  "primary_targets": [
+    "target_request_rate",
+    "target_latency_p95"
+  ],
+  "secondary_targets": [
+    "target_replica_count"
+  ],
+  "prediction_horizon": "next_step",
+  "target_statistics": {
+    "target_request_rate": {
+      "mean": 9543.305965541822,
+      "std": 9593.2135648118,
+      "min": 0.0,
+      "max": 51368.821768677146
+    },
+    "target_latency_p95": {
+      "mean": 0.16477720754664088,
+      "std": 0.06832694066411028,
+      "min": 0.0,
+      "max": 0.206495817
+    },
+    "target_replica_count": {
+      "mean": 5.997358250574825,
+      "std": 0.10787426215266743,
+      "min": 0.0,
+      "max": 6.0
+    }
+  }
+}

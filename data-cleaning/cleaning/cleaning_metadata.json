@@ -1,0 +1,26 @@
+{
+  "original_rows": 20468,
+  "final_rows": 20447,
+  "removed_corrupted": 1,
+  "removed_logical_errors": 3,
+  "removed_invalid_ranges": 17,
+  "retention_rate": 0.9989740082079344,
+  "replica_changes": 22,
+  "traffic_coverage": {
+    "low": 10224,
+    "medium": 9200,
+    "burst": 1023
+  },
+  "outliers_kept": {
+    "request_rate": 0,
+    "latency_p95": 3410,
+    "cpu_usage": 12,
+    "memory_usage": 21
+  },
+  "date_range": {
+    "start": "2026-02-11 17:31:26.241349+00:00",
+    "end": "2026-02-16 17:50:10.905153+00:00",
+    "duration": "5 days 00:18:44.663804"
+  },
+  "spike_events": 1023
+}

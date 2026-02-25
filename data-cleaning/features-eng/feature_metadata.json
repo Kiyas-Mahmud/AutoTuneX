@@ -1,0 +1,16 @@
+{
+  "original_rows": 20447,
+  "featured_rows": 20442,
+  "original_features": 9,
+  "total_features": 40,
+  "new_features": 31,
+  "feature_categories": {
+    "per_replica": 2,
+    "derived": 2,
+    "lag_features": 15,
+    "rolling_mean": 6,
+    "rolling_std": 6
+  },
+  "rows_dropped": 5,
+  "retention_rate": 0.99975546534944
+}
