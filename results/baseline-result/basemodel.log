@@ -1,0 +1,96 @@
+[{"stream_name":"stderr","time":8.476747347,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.476822157,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.476827806,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.476830473,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.233946443,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.23400247,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.234009465,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.234013883,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.149845897,"data":"Libraries loaded successfully\n"}
+,{"stream_name":"stdout","time":15.616963339,"data":"Dataset shape: (20441, 43)\n"}
+,{"stream_name":"stdout","time":15.617007693,"data":"Date range: 2026-02-11 18:03:51.317955+00:00 to 2026-02-16 17:50:00.905179+00:00\n"}
+,{"stream_name":"stdout","time":15.652794663,"data":"Features shape: (20441, 39)\n"}
+,{"stream_name":"stdout","time":15.652841616,"data":"Targets shape: (20441, 2)\n"}
+,{"stream_name":"stdout","time":15.652848127,"data":"\n"}
+,{"stream_name":"stdout","time":15.652852245,"data":"Feature columns (39): ['request_rate', 'latency_p50', 'latency_p95', 'latency_p99', 'error_rate', 'cpu_usage', 'memory_usage', 'replica_count', 'cpu_per_replica', 'memory_per_replica']...\n"}
+,{"stream_name":"stdout","time":15.682656565,"data":"Time-series split completed:\n"}
+,{"stream_name":"stdout","time":15.682694427,"data":"Train: 14308 samples (70.0%)\n"}
+,{"stream_name":"stdout","time":15.682700639,"data":"Val:   3066 samples (15.0%)\n"}
+,{"stream_name":"stdout","time":15.682704463,"data":"Test:  3067 samples (15.0%)\n"}
+,{"stream_name":"stdout","time":15.682708218,"data":"Total: 20441 samples\n"}
+,{"stream_name":"stdout","time":15.712505995,"data":"Evaluation functions defined\n"}
+,{"stream_name":"stdout","time":15.793259363,"data":"Training Linear Regression...\n"}
+,{"stream_name":"stdout","time":15.82570005,"data":"Linear Regression completed\n"}
+,{"stream_name":"stdout","time":15.825741738,"data":"Test R² (request_rate): 0.8672\n"}
+,{"stream_name":"stdout","time":15.825747825,"data":"Test R² (latency_p95): 0.6894\n"}
+,{"stream_name":"stdout","time":15.825751906,"data":"Spike prediction accuracy: 0.9573\n"}
+,{"stream_name":"stdout","time":15.918073788,"data":"Training Random Forest...\n"}
+,{"stream_name":"stdout","time":78.858060819,"data":"Random Forest completed\n"}
+,{"stream_name":"stdout","time":78.858112754,"data":"Test R² (request_rate): 0.8393\n"}
+,{"stream_name":"stdout","time":78.858121077,"data":"Test R² (latency_p95): 0.2387\n"}
+,{"stream_name":"stdout","time":78.8581276,"data":"Spike prediction accuracy: 0.9498\n"}
+,{"stream_name":"stdout","time":79.063770716,"data":"Training XGBoost...\n"}
+,{"stream_name":"stdout","time":82.70756942,"data":"XGBoost completed\n"}
+,{"stream_name":"stdout","time":82.707609421,"data":"Test R² (request_rate): 0.6647\n"}
+,{"stream_name":"stdout","time":82.707616634,"data":"Test R² (latency_p95): -0.5055\n"}
+,{"stream_name":"stdout","time":82.707622257,"data":"Spike prediction accuracy: 0.9498\n"}
+,{"stream_name":"stdout","time":82.74636805,"data":"\n"}
+,{"stream_name":"stdout","time":82.746418797,"data":"=== REQUEST RATE PREDICTION RESULTS ===\n"}
+,{"stream_name":"stdout","time":82.746426663,"data":"            Model   Train MAE  Train RMSE  Train R²     Val MAE    Val RMSE   Val R²    Test MAE   Test RMSE  Test R²  Spike Accuracy\n"}
+,{"stream_name":"stdout","time":82.746433579,"data":"Linear Regression 1915.271554 2907.193529  0.852811 4085.263590 5167.162281 0.724993 3060.171992 4464.784054 0.867170        0.957287\n"}
+,{"stream_name":"stdout","time":82.746439709,"data":"    Random Forest  773.557403 1225.071509  0.973863 4438.166379 5571.937336 0.680219 3437.464264 4910.951391 0.839296        0.949788\n"}
+,{"stream_name":"stdout","time":82.74644529,"data":"          XGBoost  823.433537 1155.744905  0.976738 5590.949139 7320.616620 0.448005 4911.103585 7093.657029 0.664697        0.949788\n"}
+,{"stream_name":"stdout","time":82.78323274,"data":"\n"}
+,{"stream_name":"stdout","time":82.783278852,"data":"=== LATENCY P95 PREDICTION RESULTS ===\n"}
+,{"stream_name":"stdout","time":82.783284934,"data":"            Model  Train MAE  Train RMSE  Train R²  Val MAE  Val RMSE   Val R²  Test MAE  Test RMSE   Test R²\n"}
+,{"stream_name":"stdout","time":82.783290248,"data":"Linear Regression   0.022151    0.043286  0.461024 0.021625  0.039762 0.446563  0.039352   0.052207  0.689419\n"}
+,{"stream_name":"stdout","time":82.783294764,"data":"    Random Forest   0.009461    0.020674  0.877052 0.039948  0.052448 0.037084  0.072078   0.081739  0.238653\n"}
+,{"stream_name":"stdout","time":82.783299559,"data":"          XGBoost   0.007042    0.015012  0.935176 0.030368  0.050017 0.124265  0.087525   0.114943 -0.505531\n"}
+,{"stream_name":"stdout","time":82.911194272,"data":"\n"}
+,{"stream_name":"stdout","time":82.911238172,"data":"=== REQUEST RATE PREDICTION - STYLED TABLE ===\n"}
+,{"stream_name":"stdout","time":82.96231757,"data":"\n"}
+,{"stream_name":"stdout","time":82.962377301,"data":"=== LATENCY P95 PREDICTION - STYLED TABLE ===\n"}
+,{"stream_name":"stdout","time":85.380420142,"data":"Visualization saved: baseline_predictions.png\n"}
+,{"stream_name":"stdout","time":86.559519592,"data":"Time series visualization saved: baseline_timeseries.png\n"}
+,{"stream_name":"stdout","time":86.637360751,"data":"Results saved:\n"}
+,{"stream_name":"stdout","time":86.637395542,"data":"  - baseline_results_request_rate.csv\n"}
+,{"stream_name":"stdout","time":86.637401542,"data":"  - baseline_results_latency_p95.csv\n"}
+,{"stream_name":"stdout","time":86.715176728,"data":"\n"}
+,{"stream_name":"stdout","time":86.715234123,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":86.715240031,"data":"STAGE 2: BASELINE MODELING - SUMMARY\n"}
+,{"stream_name":"stdout","time":86.715243847,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":86.715247709,"data":"\n"}
+,{"stream_name":"stdout","time":86.715251034,"data":"REQUEST RATE PREDICTION:\n"}
+,{"stream_name":"stdout","time":86.715254704,"data":"  Best Model: Linear Regression\n"}
+,{"stream_name":"stdout","time":86.715258615,"data":"  Test R²: 0.8672\n"}
+,{"stream_name":"stdout","time":86.715263119,"data":"  Test MAE: 3060.17\n"}
+,{"stream_name":"stdout","time":86.715266622,"data":"\n"}
+,{"stream_name":"stdout","time":86.71527011,"data":"LATENCY P95 PREDICTION:\n"}
+,{"stream_name":"stdout","time":86.715273558,"data":"  Best Model: Linear Regression\n"}
+,{"stream_name":"stdout","time":86.715277217,"data":"  Test R²: 0.6894\n"}
+,{"stream_name":"stdout","time":86.715280758,"data":"  Test MAE: 0.039352\n"}
+,{"stream_name":"stdout","time":86.715304248,"data":"\n"}
+,{"stream_name":"stdout","time":86.715308403,"data":"SPIKE PREDICTION:\n"}
+,{"stream_name":"stdout","time":86.71531231,"data":"  Best Model: Linear Regression\n"}
+,{"stream_name":"stdout","time":86.715316086,"data":"  Accuracy: 0.9573\n"}
+,{"stream_name":"stdout","time":86.715319818,"data":"\n"}
+,{"stream_name":"stdout","time":86.715323678,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":86.715327771,"data":"All baseline models trained successfully!\n"}
+,{"stream_name":"stdout","time":86.71533167,"data":"Results saved and ready for comparison with Transformer model.\n"}
+,{"stream_name":"stdout","time":86.715335202,"data":"============================================================\n"}
+,{"stream_name":"stderr","time":90.237469708,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":90.237518178,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":90.445028717,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":90.4450655,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":91.188168098,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":91.18823351,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":91.228053016,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":91.661539343,"data":"[NbConvertApp] Writing 1027817 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":94.745433994,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":94.745472766,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":94.770879716,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":95.954286239,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":95.95434364,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":95.955080939,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":95.955744633,"data":"[NbConvertApp] Writing 384816 bytes to __results__.html\n"}
+]
