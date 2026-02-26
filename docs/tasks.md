@@ -55,51 +55,53 @@ This document contains all tasks for the AutoTuneX research project, organized b
 
 ### Task 2.1: Prepare Data Splits
 
-- [ ] Implement time-series split (not random shuffle)
-- [ ] Create 70% training set
-- [ ] Create 15% validation set
-- [ ] Create 15% test set
-- [ ] Verify split integrity
-- [ ] Document split methodology
+- [x] Implement time-series split (not random shuffle)
+- [x] Create 70% training set
+- [x] Create 15% validation set
+- [x] Create 15% test set
+- [x] Verify split integrity
+- [x] Document split methodology
 
 ### Task 2.2: Implement Linear Regression Baseline
 
-- [ ] Implement Linear Regression model
-- [ ] Train on training set
-- [ ] Validate on validation set
-- [ ] Test on test set
-- [ ] Calculate MAE, RMSE, R²
-- [ ] Calculate spike prediction accuracy
-- [ ] Save model and results
+- [x] Implement Linear Regression model
+- [x] Train on training set
+- [x] Validate on validation set
+- [x] Test on test set
+- [x] Calculate MAE, RMSE, R²
+- [x] Calculate spike prediction accuracy
+- [x] Save model and results
 
 ### Task 2.3: Implement Random Forest Baseline
 
-- [ ] Implement Random Forest model
-- [ ] Tune hyperparameters on validation set
-- [ ] Train on training set
-- [ ] Test on test set
-- [ ] Calculate MAE, RMSE, R²
-- [ ] Calculate spike prediction accuracy
-- [ ] Save model and results
+- [x] Implement Random Forest model
+- [x] Tune hyperparameters on validation set
+- [x] Train on training set
+- [x] Test on test set
+- [x] Calculate MAE, RMSE, R²
+- [x] Calculate spike prediction accuracy
+- [x] Save model and results
 
 ### Task 2.4: Implement XGBoost/LightGBM Baseline
 
-- [ ] Implement XGBoost or LightGBM model
-- [ ] Tune hyperparameters on validation set
-- [ ] Train on training set
-- [ ] Test on test set
-- [ ] Calculate MAE, RMSE, R²
-- [ ] Calculate spike prediction accuracy
-- [ ] Save model and results
+- [x] Implement XGBoost or LightGBM model
+- [x] Tune hyperparameters on validation set
+- [x] Train on training set
+- [x] Test on test set
+- [x] Calculate MAE, RMSE, R²
+- [x] Calculate spike prediction accuracy
+- [x] Save model and results
 
 ### Task 2.5: Create Baseline Performance Table
 
-- [ ] Compile all baseline results
-- [ ] Create performance comparison table
-- [ ] Generate visualizations
-- [ ] Document findings and insights
+- [x] Compile all baseline results
+- [x] Create performance comparison table
+- [x] Generate visualizations
+- [x] Document findings and insights
 
-**Output:** Baseline performance table with all models compared
+**Output:** Baseline performance table with all models compared  
+**Report:** [docs/tasks/stage_2_baseline_modeling_analysis.md](docs/tasks/stage_2_baseline_modeling_analysis.md)  
+**Notebook:** [model/basline/baseline_modeling.ipynb](model/basline/baseline_modeling.ipynb)
 
 ---
 
@@ -107,47 +109,57 @@ This document contains all tasks for the AutoTuneX research project, organized b
 
 ### Task 3.1: Prepare Sliding Window Data
 
-- [ ] Define input window size (e.g., last 10 timestamps)
-- [ ] Define prediction horizon (next timestamp)
-- [ ] Implement sliding window data generator
-- [ ] Create batches with shape: (batch_size, sequence_length, features)
-- [ ] Example: (32, 10, 12 features)
-- [ ] Validate data preparation pipeline
-- [ ] Document data structure
+- [x] Define input window size (e.g., last 10 timestamps)
+- [x] Define prediction horizon (next timestamp)
+- [x] Implement sliding window data generator
+- [x] Create batches with shape: (batch_size, sequence_length, features)
+- [x] Example: (32, 10, 12 features)
+- [x] Validate data preparation pipeline
+- [x] Document data structure
+
+**Output:** Sliding window sequences created (window_size=10)  
+**Notebook:** [model/transformer/transformer_modeling.ipynb](model/transformer/transformer_modeling.ipynb)
 
 ### Task 3.2: Build Time-Series Transformer Architecture
 
-- [ ] Implement input embedding layer
-- [ ] Implement positional encoding
-- [ ] Implement 2–3 encoder layers
-- [ ] Implement multi-head attention (4–8 heads)
-- [ ] Implement feed-forward network
-- [ ] Implement output dense layer
-- [ ] Configure MSE loss function
-- [ ] Configure Adam optimizer
-- [ ] Implement early stopping
-- [ ] Document architecture details
+- [x] Implement input embedding layer
+- [x] Implement positional encoding
+- [x] Implement 2–3 encoder layers
+- [x] Implement multi-head attention (4–8 heads)
+- [x] Implement feed-forward network
+- [x] Implement output dense layer
+- [x] Configure MSE loss function
+- [x] Configure Adam optimizer
+- [x] Implement early stopping
+- [x] Document architecture details
+
+**Output:** Complete Transformer architecture with 4 attention heads, 2 encoder blocks  
+**Notebook:** [model/transformer/transformer_modeling.ipynb](model/transformer/transformer_modeling.ipynb)
 
 ### Task 3.3: Train Transformer Model
 
-- [ ] Train transformer on training set
-- [ ] Monitor validation loss
-- [ ] Apply early stopping
-- [ ] Save best model checkpoints
-- [ ] Log training metrics
-- [ ] Document training process
+- [x] Train transformer on training set
+- [x] Monitor validation loss
+- [x] Apply early stopping
+- [x] Save best model checkpoints
+- [x] Log training metrics
+- [x] Document training process
+
+**Output:** Trained Transformer model with early stopping and learning rate scheduling  
+**Notebook:** [model/transformer/transformer_modeling.ipynb](model/transformer/transformer_modeling.ipynb)
 
 ### Task 3.4: Evaluate and Compare Transformer
 
-- [ ] Evaluate transformer on test set
-- [ ] Compare transformer vs XGBoost vs Random Forest
-- [ ] Analyze: Does transformer achieve lower MAE?
-- [ ] Analyze: Does transformer capture spikes better?
-- [ ] Analyze: Does transformer predict latency better?
-- [ ] Create comparison visualizations
-- [ ] Document findings for main result section
+- [x] Evaluate transformer on test set
+- [x] Compare transformer vs XGBoost vs Random Forest
+- [x] Analyze: Does transformer achieve lower MAE?
+- [x] Analyze: Does transformer capture spikes better?
+- [x] Analyze: Does transformer predict latency better?
+- [x] Create comparison visualizations
+- [x] Document findings for main result section
 
-**Output:** Transformer model with comparative analysis showing improvements
+**Output:** Comprehensive comparison analysis with visualizations  
+**Notebook:** [model/transformer/transformer_modeling.ipynb](model/transformer/transformer_modeling.ipynb)
 
 ---
 
