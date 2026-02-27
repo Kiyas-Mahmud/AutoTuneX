@@ -19,21 +19,24 @@ This directory contains the Transformer modeling implementation for AutoTuneX pr
 ### 🔥 Priority 1: Critical Changes
 
 #### 1.1 Increased Window Size
+
 - **Before**: 10 timesteps
 - **After**: 30 timesteps (+200%)
 - **Rationale**: Captures more temporal context for autoscaling patterns (hourly/daily cycles)
 - **Expected Impact**: +10-20% R² improvement
 
 #### 1.2 Optimized Learning Rate with Warm-Up
+
 - **Before**: Fixed 0.001
 - **After**: 0.0001 with warm-up schedule
-- **Schedule**: 
+- **Schedule**:
   - Warm-up: Linear increase for 5 epochs
   - Main training: Cosine decay
 - **Rationale**: Stabilizes early training, prevents overshooting
 - **Expected Impact**: +5-10% R² improvement
 
 #### 1.3 Hyperparameter Testing Capability
+
 - **Added**: Framework ready for testing multiple configurations
 - **Next Steps**: Test window sizes [20, 30, 50, 100]
 
@@ -42,12 +45,14 @@ This directory contains the Transformer modeling implementation for AutoTuneX pr
 ### ⚡ Priority 2: Architecture Enhancements
 
 #### 2.1 Deeper Architecture
+
 - **Before**: 2 Transformer blocks
 - **After**: 4 Transformer blocks (+100%)
 - **Rationale**: Captures more complex patterns
 - **Expected Impact**: +3-8% R² improvement
 
 #### 2.2 Sinusoidal Positional Encoding
+
 - **Before**: Learned positional embeddings
 - **After**: Sinusoidal positional encoding
 - **Rationale**: Better captures relative temporal positions, proven in original Transformer paper
@@ -55,6 +60,7 @@ This directory contains the Transformer modeling implementation for AutoTuneX pr
 - **Expected Impact**: +2-5% R² improvement
 
 #### 2.3 Optimized Adam Parameters
+
 - **Before**: Default Adam (beta2=0.999)
 - **After**: Transformer-specific (beta2=0.98, epsilon=1e-9)
 - **Rationale**: Parameters from "Attention Is All You Need" paper
@@ -65,12 +71,14 @@ This directory contains the Transformer modeling implementation for AutoTuneX pr
 ### 🎯 Priority 3: Data & Training Enhancements
 
 #### 3.1 Data Augmentation
+
 - **Before**: No augmentation
 - **After**: Gaussian noise (std=0.01) added to training sequences
 - **Rationale**: Prevents overfitting on small datasets
 - **Expected Impact**: +2-5% R² improvement on test set
 
 #### 3.2 Spike-Weighted Loss Function
+
 - **Before**: Plain MSE loss
 - **After**: Custom spike-weighted MSE
 - **Implementation**: `spike_weighted_mse()` function
@@ -79,6 +87,7 @@ This directory contains the Transformer modeling implementation for AutoTuneX pr
 - **Expected Impact**: +5-10% spike accuracy, +2-5% R² on spikes
 
 #### 3.3 Extended Training Patience
+
 - **Before**: Early stopping patience = 10 epochs
 - **After**: Early stopping patience = 15 epochs
 - **Rationale**: Deeper model needs more time to converge
@@ -117,16 +126,19 @@ loss = mean(weight * (y_true - y_pred)^2)
 ## Expected Performance Improvements
 
 ### Request Rate Prediction
+
 - **Original R²**: 0.5067
 - **Expected R²**: 0.60-0.70 (cumulative +18-38%)
 - **Target**: Match or exceed Linear Regression (0.8672)
 
-### Latency P95 Prediction  
+### Latency P95 Prediction
+
 - **Original R²**: -0.1541
 - **Expected R²**: 0.30-0.50 (fixing negative R²)
 - **Target**: Match or exceed Linear Regression (0.6894)
 
 ### Spike Detection
+
 - **Original Accuracy**: 95.0%
 - **Expected Accuracy**: 96-98%
 
@@ -134,30 +146,34 @@ loss = mean(weight * (y_true - y_pred)^2)
 
 ## Cumulative Expected Impact
 
-| Priority | Changes | Expected R² Gain |
-|----------|---------|------------------|
-| Priority 1 | Window size, LR, warmup | +18-32% |
-| Priority 2 | Deeper, sinusoidal, Adam | +6-16% |
-| Priority 3 | Augmentation, spike loss | +9-20% |
-| **TOTAL** | **All improvements** | **+33-68%** |
+| Priority   | Changes                  | Expected R² Gain |
+| ---------- | ------------------------ | ---------------- |
+| Priority 1 | Window size, LR, warmup  | +18-32%          |
+| Priority 2 | Deeper, sinusoidal, Adam | +6-16%           |
+| Priority 3 | Augmentation, spike loss | +9-20%           |
+| **TOTAL**  | **All improvements**     | **+33-68%**      |
 
 ---
 
 ## Priority 4 (Future Work - Not Yet Implemented)
 
 ### 4.1 Attention Visualization
+
 - Extract and visualize attention weights
 - Understand which timesteps are most important
 
 ### 4.2 Hybrid CNN-Transformer Architecture
+
 - Add CNN layers for local pattern extraction
 - Keep Transformer for global dependencies
 
 ### 4.3 Multi-Task Learning
+
 - Separate prediction heads for each target
 - Task-specific losses and gradient balancing
 
 ### 4.4 Temporal Convolutional Network (TCN) Alternative
+
 - Try TCN as alternative architecture
 - May outperform on small datasets
 
@@ -166,12 +182,14 @@ loss = mean(weight * (y_true - y_pred)^2)
 ## Usage
 
 ### Running Original Version (v1.0)
+
 ```bash
 # Run transformer_modeling.ipynb
 # Results in original analysis: R²=0.5067 (request_rate), R²=-0.1541 (latency)
 ```
 
 ### Running Improved Version (v2.0)
+
 ```bash
 # Run transformer_modeling_improved.ipynb
 # Expected better results with all Priority 1-3 improvements
@@ -221,6 +239,7 @@ for WINDOW_SIZE in [20, 30, 50]:
 ## Performance Tracking
 
 ### Version 1.0 (Original)
+
 - Window Size: 10
 - Transformer Blocks: 2
 - Learning Rate: 0.001 (fixed)
@@ -231,6 +250,7 @@ for WINDOW_SIZE in [20, 30, 50]:
 - **Spike Accuracy**: 95.0%
 
 ### Version 2.0 (Improved) - To Be Updated After Run
+
 - Window Size: 30
 - Transformer Blocks: 4
 - Learning Rate: 0.0001 (warm-up + cosine decay)

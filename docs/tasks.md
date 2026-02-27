@@ -155,25 +155,35 @@ This document contains all tasks for the AutoTuneX research project, organized b
 
 ### Task 4.1: Define Decision Framework
 
-- [ ] Define normalized score function
-- [ ] Set weights: w1 (predicted_latency), w2 (predicted_cpu), w3 (replica_cost_penalty)
-- [ ] Document multi-objective optimization approach
+- [x] Define normalized score function
+- [x] Set weights: w1 (predicted_latency), w2 (predicted_cpu), w3 (replica_cost_penalty)
+- [x] Document multi-objective optimization approach
+
+**Output:** Objective function notebook with normalization and scoring  
+**Notebook:** [model/decision-engine/notebooks/1_objective_function.ipynb](model/decision-engine/notebooks/1_objective_function.ipynb)
 
 ### Task 4.2: Implement Candidate Evaluation
 
-- [ ] Implement candidate replica testing: current −1, current, current +1, current +2
-- [ ] Calculate score for each candidate
-- [ ] Select candidate with lowest score
-- [ ] Document decision logic
+- [x] Implement candidate replica testing: current −1, current, current +1, current +2
+- [x] Calculate score for each candidate
+- [x] Select candidate with lowest score
+- [x] Document decision logic
+
+**Output:** Decision algorithm with safety constraints  
+**Notebook:** [model/decision-engine/notebooks/2_decision_algorithm.ipynb](model/decision-engine/notebooks/2_decision_algorithm.ipynb)
 
 ### Task 4.3: Test Decision Engine
 
-- [ ] Test on validation data
-- [ ] Verify decision quality
-- [ ] Tune weights if needed
-- [ ] Document decision outcomes
+- [x] Test on validation data
+- [x] Verify decision quality
+- [x] Tune weights if needed
+- [x] Document decision outcomes
 
-**Output:** Intelligent autoscaling decision engine
+**Output:** Simulation and comprehensive evaluation  
+**Notebook:** [model/decision-engine/notebooks/3_simulator.ipynb](model/decision-engine/notebooks/3_simulator.ipynb)  
+**Results:** Cost reduction validated, SLO compliance achieved, stability maintained
+
+**STAGE 4 STATUS: ✅ COMPLETE**
 
 ---
 

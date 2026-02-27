@@ -1,0 +1,5 @@
+Method,Avg Replicas,Total Cost,Cost Reduction,Avg Latency (ms),P95 Latency (ms),SLO Violations,SLO Rate,Scaling Actions
+AutoTuneX,2.78,1388,72.2%,45.4,54.9,0,0.00%,5
+Static (10 replicas),10.00,5000,0.0%,41.2,43.0,0,0.00%,1
+Threshold-based,13.95,6975,-39.5%,40.8,41.7,0,0.00%,41
+Kubernetes HPA,13.30,6649,-33.0%,40.9,41.6,0,0.00%,54

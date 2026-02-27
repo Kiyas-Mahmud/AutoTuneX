@@ -1,0 +1,42 @@
+{
+  "AutoTuneX": {
+    "total_cost": 1388.0,
+    "avg_replicas": 2.776,
+    "avg_latency": 45.354439756794676,
+    "p95_latency": 54.93591369650411,
+    "avg_cpu": 90.21611600022548,
+    "slo_violations": 0.0,
+    "slo_violation_rate": 0.0,
+    "scaling_actions": 5.0
+  },
+  "Static (10 replicas)": {
+    "total_cost": 5000.0,
+    "avg_replicas": 10.0,
+    "avg_latency": 41.19177215166059,
+    "p95_latency": 42.98718273930082,
+    "avg_cpu": 76.45263633621816,
+    "slo_violations": 0.0,
+    "slo_violation_rate": 0.0,
+    "scaling_actions": 1.0
+  },
+  "Threshold-based": {
+    "total_cost": 6975.0,
+    "avg_replicas": 13.95,
+    "avg_latency": 40.84012797489777,
+    "p95_latency": 41.69496038139398,
+    "avg_cpu": 69.25561256337474,
+    "slo_violations": 0.0,
+    "slo_violation_rate": 0.0,
+    "scaling_actions": 41.0
+  },
+  "Kubernetes HPA": {
+    "total_cost": 6649.0,
+    "avg_replicas": 13.298,
+    "avg_latency": 40.859815917733044,
+    "p95_latency": 41.63678160382556,
+    "avg_cpu": 70.86183486719426,
+    "slo_violations": 0.0,
+    "slo_violation_rate": 0.0,
+    "scaling_actions": 54.0
+  }
+}

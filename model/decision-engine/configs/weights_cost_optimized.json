@@ -1,0 +1,30 @@
+{
+  "name": "Cost-Optimized Configuration",
+  "description": "Prioritize cost reduction while maintaining SLO compliance",
+  "weights": {
+    "latency": 0.3,
+    "cpu": 0.2,
+    "cost": 0.5
+  },
+  "constraints": {
+    "min_replicas": 2,
+    "max_replicas": 15,
+    "max_step_change": 1,
+    "cooldown_seconds": 90,
+    "oscillation_window": 6
+  },
+  "slo": {
+    "latency_p95_target_ms": 100,
+    "latency_p95_max_ms": 150,
+    "cpu_target_percent": 75,
+    "cpu_max_percent": 90
+  },
+  "normalization": {
+    "latency_min_ms": 20,
+    "latency_max_ms": 200,
+    "cpu_min_percent": 0,
+    "cpu_max_percent": 100,
+    "cost_min_replicas": 2,
+    "cost_max_replicas": 15
+  }
+}

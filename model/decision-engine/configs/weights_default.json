@@ -1,0 +1,30 @@
+{
+  "name": "Default Balanced Configuration",
+  "description": "Balanced weights for cost, performance, and resource efficiency",
+  "weights": {
+    "latency": 0.5,
+    "cpu": 0.3,
+    "cost": 0.2
+  },
+  "constraints": {
+    "min_replicas": 2,
+    "max_replicas": 20,
+    "max_step_change": 2,
+    "cooldown_seconds": 60,
+    "oscillation_window": 5
+  },
+  "slo": {
+    "latency_p95_target_ms": 100,
+    "latency_p95_max_ms": 150,
+    "cpu_target_percent": 70,
+    "cpu_max_percent": 85
+  },
+  "normalization": {
+    "latency_min_ms": 20,
+    "latency_max_ms": 200,
+    "cpu_min_percent": 0,
+    "cpu_max_percent": 100,
+    "cost_min_replicas": 2,
+    "cost_max_replicas": 20
+  }
+}

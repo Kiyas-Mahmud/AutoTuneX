@@ -1,0 +1,30 @@
+{
+  "name": "Performance-Optimized Configuration",
+  "description": "Prioritize latency and performance over cost",
+  "weights": {
+    "latency": 0.6,
+    "cpu": 0.3,
+    "cost": 0.1
+  },
+  "constraints": {
+    "min_replicas": 3,
+    "max_replicas": 25,
+    "max_step_change": 3,
+    "cooldown_seconds": 30,
+    "oscillation_window": 4
+  },
+  "slo": {
+    "latency_p95_target_ms": 80,
+    "latency_p95_max_ms": 120,
+    "cpu_target_percent": 60,
+    "cpu_max_percent": 75
+  },
+  "normalization": {
+    "latency_min_ms": 20,
+    "latency_max_ms": 200,
+    "cpu_min_percent": 0,
+    "cpu_max_percent": 100,
+    "cost_min_replicas": 3,
+    "cost_max_replicas": 25
+  }
+}
